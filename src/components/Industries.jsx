@@ -18,6 +18,8 @@ import {
   CleaningServices,
   Water
 } from '@mui/icons-material';
+import cleaningAgentImg from '../assets/CleaningAgent.png';
+import waterTreatmentImg from '../assets/WaterTreatement.png';
 
 const Industries = () => {
   const industries = [
@@ -54,14 +56,14 @@ const Industries = () => {
       icon: <CleaningServices sx={{ fontSize: 40, color: 'primary.main' }} />,
       description: "Industrial and commercial cleaning solutions for various sectors including manufacturing, hospitality, and healthcare.",
       applications: ["Industrial Cleaners", "Sanitizers", "Degreasers", "Maintenance Chemicals"],
-      image: "/src/assets/CleaningAgent.png"
+      image: cleaningAgentImg
     },
     {
       title: "Water Treatment",
       icon: <Water sx={{ fontSize: 40, color: 'primary.main' }} />,
       description: "Chemical solutions for water purification, treatment, and management in municipal and industrial applications.",
       applications: ["Coagulants", "Flocculants", "Disinfectants", "Corrosion Inhibitors"],
-      image: "/src/assets/WaterTreatement.png"
+      image: waterTreatmentImg
     }
   ];
 

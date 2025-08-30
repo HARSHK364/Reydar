@@ -25,6 +25,8 @@ import {
   ArrowForwardIos
 } from '@mui/icons-material';
 import reydarLogo from '../assets/Reydar.png';
+import waterTreatmentImg from '../assets/WaterTreatement.png';
+import cleaningAgentImg from '../assets/CleaningAgent.png';
 
 const Home = () => {
   const scrollToFooter = () => {
@@ -56,13 +58,13 @@ const Home = () => {
     {
       title: "Water Purification Chemicals",
       description: "Advanced chemicals for water treatment processes",
-      image: "/src/assets/WaterTreatement.png",
+      image: waterTreatmentImg,
       category: "Water Treatment"
     },
     {
       title: "Industrial Cleaners",
       description: "Professional-grade cleaning solutions for industry",
-      image: "/src/assets/CleaningAgent.png",
+      image: cleaningAgentImg,
       category: "Cleaning Chemicals"
     }
   ];
