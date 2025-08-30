@@ -38,8 +38,8 @@ const Header = () => {
 
   const menuItems = [
     { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
     { label: 'Services', path: '/services' },
+    { label: 'About', path: '/about' },
     { label: 'Industries Served', path: '/industries' },
     { label: 'Why Choose Us', path: '/why-choose-us' },
     { label: 'Contact', action: scrollToFooter }

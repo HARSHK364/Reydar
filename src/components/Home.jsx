@@ -92,7 +92,7 @@ const Home = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          minHeight: '80vh',
+          minHeight: { xs: '60vh', md: '80vh' },
           display: 'flex',
           alignItems: 'center',
           background: 'linear-gradient(135deg, rgba(25,118,210,0.1) 0%, rgba(66,165,245,0.1) 100%)',
@@ -119,7 +119,7 @@ const Home = () => {
           />
         <Grid container spacing={4} sx={{ position: 'relative', zIndex: 1 }}>
           <Grid item xs={12} md={6}>
-            <Box sx={{ p: { xs: 4, md: 6 } }}>
+            <Box sx={{ p: { xs: 3, md: 6 } }}>
               <Typography
                 variant="h2"
                 component="h1"
@@ -130,7 +130,8 @@ const Home = () => {
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  mb: 3
+                  mb: 3,
+                  fontSize: { xs: '2rem', md: '3.75rem' }
                 }}
               >
                 Accelerate Growth in the Chemical Industry
@@ -139,13 +140,13 @@ const Home = () => {
                 variant="h5"
                 color="text.secondary"
                 paragraph
-                sx={{ mb: 4, lineHeight: 1.6 }}
+                sx={{ mb: 4, lineHeight: 1.6, fontSize: { xs: '1.1rem', md: '1.5rem' } }}
               >
                 Expert sales and marketing consulting for chemical companies. 
                 Drive revenue growth, expand market reach, and accelerate business success 
                 with our proven industry expertise.
               </Typography>
-              <Box sx={{ display: 'flex', gap: 2, mb: 4, flexWrap: 'wrap' }}>
+              <Box sx={{ display: 'flex', gap: 2, mb: 4, flexWrap: 'wrap', flexDirection: { xs: 'column', sm: 'row' } }}>
                 <Button
                   variant="contained"
                   size="large"
@@ -170,7 +171,7 @@ const Home = () => {
                   Learn More
                 </Button>
               </Box>
-              <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap' }}>
+              <Box sx={{ display: 'flex', gap: { xs: 2, md: 3 }, flexWrap: 'wrap', flexDirection: { xs: 'column', sm: 'row' } }}>
                 <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <Phone color="primary" fontSize="small" />
                   +91-9171690029
@@ -186,8 +187,8 @@ const Home = () => {
       </Box>
 
       {/* Statistics Section */}
-      <Paper elevation={3} sx={{ p: 6, mb: 8, bgcolor: 'grey.50'}}>
-        <Grid container spacing={15} sx={{ textAlign: 'center' }}>
+      <Paper elevation={3} sx={{ p: 6, mb: 8, bgcolor: 'grey.50', margin:"40px"}}>
+        <Grid container spacing={5} sx={{ textAlign: 'center' }}>
           <Grid item xs={12} sm={4}>
             <Typography variant="h3" sx={{ fontWeight: 'bold', color: 'primary.main' }}>
               10+
@@ -217,7 +218,7 @@ const Home = () => {
               100+
             </Typography>
             <Typography variant="h6" color="text.secondary">
-              Happy Clients
+              Happy Customers Monthly
             </Typography>
           </Grid>
         </Grid>
@@ -235,11 +236,11 @@ const Home = () => {
           Chemical Products We Deal With
         </Typography>
         
-        <Box sx={{ position: 'relative', maxWidth: 800, mx: 'auto' }}>
+        <Box sx={{ position: 'relative', maxWidth: { xs: '100%', md: 800 }, mx: 'auto' }}>
           <Card sx={{ position: 'relative', overflow: 'hidden' }}>
             <CardMedia
               component="img"
-              height="400"
+              height={{ xs: "250", md: "400" }}
               image={chemicalProducts[currentSlide].image}
               alt={chemicalProducts[currentSlide].title}
               sx={{ objectFit: 'cover' }}
@@ -252,17 +253,17 @@ const Home = () => {
                 right: 0,
                 background: 'linear-gradient(transparent, rgba(0,0,0,0.8))',
                 color: 'white',
-                p: 3
+                p: { xs: 2, md: 3 }
               }}
             >
               <Chip 
                 label={chemicalProducts[currentSlide].category} 
                 sx={{ mb: 2, bgcolor: 'primary.main', color: 'white' }} 
               />
-              <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold' }}>
+              <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', fontSize: { xs: '1.2rem', md: '1.5rem' } }}>
                 {chemicalProducts[currentSlide].title}
               </Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}>
                 {chemicalProducts[currentSlide].description}
               </Typography>
             </Box>
@@ -272,7 +273,7 @@ const Home = () => {
               onClick={prevSlide}
               sx={{
                 position: 'absolute',
-                left: 16,
+                left: { xs: 8, md: 16 },
                 top: '50%',
                 transform: 'translateY(-50%)',
                 bgcolor: 'rgba(255,255,255,0.8)',
@@ -285,7 +286,7 @@ const Home = () => {
               onClick={nextSlide}
               sx={{
                 position: 'absolute',
-                right: 16,
+                right: { xs: 8, md: 16 },
                 top: '50%',
                 transform: 'translateY(-50%)',
                 bgcolor: 'rgba(255,255,255,0.8)',
