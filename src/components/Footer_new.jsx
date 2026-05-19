@@ -49,7 +49,7 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
               <Email sx={{ mr: 2, color: 'primary.light' }} />
-              <Typography variant="body2">contact@reydar.in</Typography>
+              <Typography variant="body2">contact@ReydarIndia.in</Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
               <Phone sx={{ mr: 2, color: 'primary.light' }} />
@@ -83,7 +83,7 @@ const Footer = () => {
           <Typography variant="body2" color="grey.400">
             © 2025 Reydar. All rights reserved.
           </Typography>
-          <Box sx={{ display: 'flex', gap: 3 }}>
+          {/* <Box sx={{ display: 'flex', gap: 3 }}>
             <Typography variant="body2" color="grey.400" sx={{ cursor: 'pointer', '&:hover': { color: 'white' } }}>
               Privacy Policy
             </Typography>
@@ -93,7 +93,7 @@ const Footer = () => {
             <Typography variant="body2" color="grey.400" sx={{ cursor: 'pointer', '&:hover': { color: 'white' } }}>
               Contact Us
             </Typography>
-          </Box>
+          </Box> */}
         </Box>
       </Container>
     </Box>

@@ -234,7 +234,7 @@ const Industries = () => {
               📞 +91-9171690029
             </Typography>
             <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-              ✉️ contact@reydar.in
+              ✉️ contact@ReydarIndia.in
             </Typography>
           </Box>
         </Paper>

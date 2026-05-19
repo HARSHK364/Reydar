@@ -328,7 +328,7 @@ const WhyChooseUs = () => {
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
               <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                ✉️ contact@reydar.in
+                ✉️ contact@ReydarIndia.in
               </Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

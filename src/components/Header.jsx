@@ -38,11 +38,10 @@ const Header = () => {
 
   const menuItems = [
     { label: 'Home', path: '/' },
-    { label: 'Services', path: '/services' },
-    { label: 'About', path: '/about' },
-    { label: 'Industries Served', path: '/industries' },
-    { label: 'Why Choose Us', path: '/why-choose-us' },
-    { label: 'Contact', action: scrollToFooter }
+    { label: 'Products', path: '/products' },
+    { label: 'About Us', path: '/about' },
+    { label: 'Contact Us', path: '/contact' },
+    { label: 'Certificates', path: '/certificates' }
   ];
 
   const drawer = (
@@ -71,13 +70,13 @@ const Header = () => {
             sx={{ 
               textAlign: 'center',
               bgcolor: 'primary.main',
-              color: 'white',
+              color: 'orange',
               m: 2,
               borderRadius: 1,
               '&:hover': { bgcolor: 'primary.dark' }
             }}
           >
-            <ListItemText primary="Get Consultation" />
+            <ListItemText primary="Get Quote" />
           </ListItemButton>
         </ListItem>
       </List>
@@ -86,7 +85,7 @@ const Header = () => {
 
   return (
     <>
-      <AppBar position="static" elevation={0} sx={{ bgcolor: 'white', color: 'primary.main' }}>
+      <AppBar position="static" elevation={0} sx={{ bgcolor: '#2d53ecff', color: 'white' }}>
         <Toolbar>
           <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
             <img 
@@ -115,55 +114,54 @@ const Header = () => {
                 component={Link} 
                 to="/" 
                 color="inherit" 
-                sx={{ mx: 1, fontSize: { md: '0.875rem', lg: '1rem' } }}
+                sx={{ mx: 1, fontSize: { md: '0.875rem', lg: '1rem' }, fontWeight: 600 }}
               >
                 Home
               </Button>
               <Button 
                 component={Link} 
-                to="/services" 
+                to="/products" 
                 color="inherit" 
-                sx={{ mx: 1, fontSize: { md: '0.875rem', lg: '1rem' } }}
+                sx={{ mx: 1, fontSize: { md: '0.875rem', lg: '1rem' }, fontWeight: 600 }}
               >
-                Services
+                Products
               </Button>
               <Button 
                 component={Link} 
                 to="/about" 
                 color="inherit" 
-                sx={{ mx: 1, fontSize: { md: '0.875rem', lg: '1rem' } }}
+                sx={{ mx: 1, fontSize: { md: '0.875rem', lg: '1rem' }, fontWeight: 600 }}
               >
-                About
+                About Us
               </Button>
               <Button 
                 component={Link} 
-                to="/industries" 
+                to="/contact" 
                 color="inherit" 
-                sx={{ mx: 1, fontSize: { md: '0.875rem', lg: '1rem' } }}
+                sx={{ mx: 1, fontSize: { md: '0.875rem', lg: '1rem' }, fontWeight: 600 }}
               >
-                Industries
+                Contact Us
               </Button>
-              <Button 
+               <Button 
                 component={Link} 
-                to="/why-choose-us" 
+                to="/certificates" 
                 color="inherit" 
-                sx={{ mx: 1, fontSize: { md: '0.875rem', lg: '1rem' } }}
+                sx={{ mx: 1, fontSize: { md: '0.875rem', lg: '1rem' }, fontWeight: 600 }}
               >
-                Why Choose Us
-              </Button>
-              <Button 
-                color="inherit" 
-                sx={{ mx: 1, fontSize: { md: '0.875rem', lg: '1rem' } }}
-                onClick={scrollToFooter}
-              >
-                Contact
+                Certificates
               </Button>
               <Button 
                 variant="contained" 
-                sx={{ ml: 2 }}
+                sx={{ 
+                  ml: 2,
+                  background: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.primary.light} 90%)`,
+                  '&:hover': {
+                    background: `linear-gradient(45deg, ${theme.palette.primary.dark} 30%, ${theme.palette.primary.main} 90%)`,
+                  }
+                }}
                 onClick={scrollToFooter}
               >
-                Get Consultation
+                Get Quote
               </Button>
             </Box>
           )}

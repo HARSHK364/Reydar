@@ -1,15 +1,57 @@
+/* Modern ReydarIndia Electrical Cables Website Styles */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  /* ReydarIndia Brand Colors */
+  --primary-color: #2c5aa0;
+  --primary-light: #5e87d6;
+  --primary-dark: #1d3d70;
+  --secondary-color: #ff6f00;
+  --secondary-light: #ff9800;
+  --secondary-dark: #e65100;
+  
+  /* Typography */
+  --font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  
+  /* Shadows */
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.16);
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
 body {
   margin: 0;
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  color: #2c3e50;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
 }
 
 #root {
@@ -19,4 +61,726 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.4s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.4s ease-out;
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(45deg, var(--primary-color) 30%, var(--secondary-color) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-lift {
+  transition: transform var(--transition-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-scale {
+  transition: transform var(--transition-normal);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow {
+  transition: box-shadow var(--transition-normal);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 8px 30px rgba(44, 90, 160, 0.3);
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+/* Focus States for Accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Mobile-Specific Styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Loading Animations */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Grid Layout Fixes */
+.MuiGrid-container {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.MuiGrid-item {
+  padding-left: 16px !important;
+  padding-top: 16px !important;
+}
+
+/* Ensure consistent card widths */
+.MuiCard-root {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix for flexbox alignment */
+.MuiGrid-container .MuiGrid-item {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+/* Force equal widths for Product Features cards */
+.MuiGrid-container .MuiGrid-grid-md-6 {
+  flex: 1 1 50% !important;
+  max-width: 50% !important;
+  min-width: 0 !important;
+}
+
+.MuiGrid-container .MuiGrid-grid-xs-12 {
+  flex: 1 1 100% !important;
+  max-width: 100% !important;
+}
+
+/* Force equal widths for Product Gallery cards */
+.MuiGrid-container .MuiGrid-grid-md-3 {
+  flex: 1 1 25% !important;
+  max-width: 25% !important;
+  min-width: 0 !important;
+}
+
+.MuiGrid-container .MuiGrid-grid-sm-6 {
+  flex: 1 1 50% !important;
+  max-width: 50% !important;
+  min-width: 0 !important;
+}
+
+/* Force equal widths for Why Choose section (2 cards per row) */
+.MuiGrid-container .MuiGrid-grid-md-6 {
+  flex: 1 1 50% !important;
+  max-width: 50% !important;
+  min-width: 0 !important;
+}
+
+/* Responsive grid fixes */
+@media (min-width: 900px) {
+  .MuiGrid-container .MuiGrid-grid-md-6 {
+    flex-basis: 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+  
+  .MuiGrid-container .MuiGrid-grid-md-3 {
+    flex-basis: 25% !important;
+    max-width: 25% !important;
+    width: 25% !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .MuiGrid-grid-sm-6 {
+    flex-basis: 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+  
+  .MuiGrid-grid-md-3 {
+    flex-basis: 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+  
+  .MuiGrid-grid-md-6 {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* Why Choose ReydarIndia Cables Section - Enhanced Styling */
+.why-choose-cards .MuiGrid-container {
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+}
+
+.why-choose-cards .MuiGrid-item {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.why-choose-cards .MuiCard-root {
+  max-width: 400px !important;
+  width: 100% !important;
+  min-height: 320px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+/* Pulse Animation for Icons */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Enhanced Card Hover Effects */
+.why-choose-cards .MuiCard-root:hover {
+  animation: pulse 2s ease-in-out infinite !important;
+}
+
+.why-choose-cards .feature-icon {
+  animation: pulse 3s ease-in-out infinite !important;
+}
+
+/* Backdrop Blur Support */
+@supports (backdrop-filter: blur(10px)) {
+  .why-choose-cards .MuiCard-root {
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+  }
+}
+
+/* Enhanced Responsive Design */
+@media (min-width: 1200px) {
+  .why-choose-cards .MuiGrid-grid-lg-6 {
+    flex-basis: 50% !important;
+    max-width: 50% !important;
+  }
+  
+  .why-choose-cards .MuiCard-root {
+    max-width: 420px !important;
+    min-height: 340px !important;
+  }
+}
+
+/* Responsive behavior for Why Choose section */
+@media (min-width: 900px) {
+  .why-choose-cards .MuiGrid-grid-lg-6 {
+    flex-basis: 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1199px) {
+  .why-choose-cards .MuiGrid-grid-md-6 {
+    flex-basis: 50% !important;
+    max-width: 50% !important;
+  }
+  
+  .why-choose-cards .MuiCard-root {
+    max-width: 380px !important;
+    min-height: 300px !important;
+  }
+}
+
+@media (max-width: 599px) {
+  .why-choose-cards .MuiGrid-grid-sm-6 {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .why-choose-cards .MuiCard-root {
+    max-width: 100% !important;
+    min-height: 280px !important;
+    margin: 0 16px !important;
+  }
+}
+
+@media (max-width: 899px) {
+  .MuiGrid-grid-md-6 {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .MuiGrid-grid-md-4 {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* About Page Card Alignment */
+/* Timeline Cards */
+.timeline-cards .MuiGrid-container {
+  justify-content: center !important;
+}
+
+.timeline-cards .MuiGrid-item {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.timeline-cards .MuiCard-root {
+  max-width: 320px !important;
+  min-height: 280px !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Values/Why Choose Us Cards */
+.values-cards .MuiGrid-container {
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+  justify-content: center !important;
+}
+
+.values-cards .MuiGrid-item {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.values-cards .MuiCard-root {
+  max-width: 480px !important;
+  min-height: 220px !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Timeline Responsive Design */
+@media (max-width: 1199px) {
+  .timeline-cards .MuiGrid-grid-md-3 {
+    flex-basis: 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (max-width: 899px) {
+  .timeline-cards .MuiGrid-grid-md-3 {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .timeline-cards .MuiCard-root {
+    max-width: 100% !important;
+    margin: 0 16px !important;
+  }
+}
+
+/* Values Cards Responsive Design */
+@media (max-width: 899px) {
+  .values-cards .MuiGrid-grid-md-6 {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .values-cards .MuiCard-root {
+    max-width: 100% !important;
+    margin: 0 16px !important;
+  }
+}
+
+/* Contact Page Cards - EXACTLY 2 Cards Per Row with IDENTICAL WIDTHS */
+.contact-cards .MuiGrid-container {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  justify-content: center !important;
+}
+
+.contact-cards .MuiGrid-item {
+  display: flex !important;
+  justify-content: center !important;
+  flex-basis: 50% !important;
+  max-width: 50% !important;
+}
+
+.contact-cards .MuiCard-root {
+  width: 380px !important;
+  max-width: 380px !important;
+  min-width: 380px !important;
+  min-height: 350px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Force 2 cards per row on all screen sizes above mobile */
+@media (min-width: 900px) {
+  .contact-cards .MuiGrid-grid-md-6,
+  .contact-cards .MuiGrid-grid-lg-6,
+  .contact-cards .MuiGrid-grid-xl-6 {
+    flex-basis: 50% !important;
+    max-width: 50% !important;
+  }
+  
+  .contact-cards .MuiCard-root {
+    width: 380px !important;
+    max-width: 380px !important;
+    min-width: 380px !important;
+    min-height: 350px !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .contact-cards .MuiGrid-grid-md-6 {
+    flex-basis: 50% !important;
+    max-width: 50% !important;
+  }
+  
+  .contact-cards .MuiCard-root {
+    width: 340px !important;
+    max-width: 340px !important;
+    min-width: 340px !important;
+    min-height: 330px !important;
+  }
+}
+
+/* Mobile: 1 card per row with full width */
+@media (max-width: 599px) {
+  .contact-cards .MuiGrid-item {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .contact-cards .MuiGrid-grid-sm-12 {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .contact-cards .MuiCard-root {
+    width: calc(100% - 32px) !important;
+    max-width: calc(100% - 32px) !important;
+    min-width: calc(100% - 32px) !important;
+    margin: 0 16px !important;
+    min-height: 300px !important;
+  }
+}
+
+/* Ensure no more than 2 cards per row regardless of screen size */
+.contact-cards .MuiGrid-item:nth-child(2n+1) {
+  clear: left;
+}
+
+/* Override any Material-UI defaults that might cause 3+ cards per row */
+.contact-cards .MuiGrid-grid-sm-6,
+.contact-cards .MuiGrid-grid-sm-4,
+.contact-cards .MuiGrid-grid-sm-3,
+.contact-cards .MuiGrid-grid-md-4,
+.contact-cards .MuiGrid-grid-md-3,
+.contact-cards .MuiGrid-grid-lg-4,
+.contact-cards .MuiGrid-grid-lg-3,
+.contact-cards .MuiGrid-grid-xl-4,
+.contact-cards .MuiGrid-grid-xl-3 {
+  flex-basis: 50% !important;
+  max-width: 50% !important;
+}
+
+@media (max-width: 599px) {
+  .timeline-cards .MuiCard-root,
+  .values-cards .MuiCard-root {
+    margin: 0 8px !important;
+  }
+}
+
+/* Contact Page - Get in Touch Cards */
+.contact-cards .MuiGrid-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  justify-content: center !important;
+}
+
+.contact-cards .MuiGrid-item {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.contact-cards .MuiCard-root {
+  max-width: 280px !important;
+  min-height: 320px !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Contact Cards Responsive Design */
+@media (min-width: 1200px) {
+  .contact-cards .MuiGrid-grid-md-3 {
+    flex-basis: 25% !important;
+    max-width: 25% !important;
+  }
+  
+  .contact-cards .MuiCard-root {
+    max-width: 300px !important;
+    min-height: 340px !important;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .contact-cards .MuiGrid-grid-md-3 {
+    flex-basis: 50% !important;
+    max-width: 50% !important;
+  }
+  
+  .contact-cards .MuiCard-root {
+    max-width: 280px !important;
+    min-height: 320px !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .contact-cards .MuiGrid-grid-sm-6 {
+    flex-basis: 50% !important;
+    max-width: 50% !important;
+  }
+  
+  .contact-cards .MuiCard-root {
+    max-width: 100% !important;
+    min-height: 300px !important;
+  }
+}
+
+@media (max-width: 599px) {
+  .contact-cards .MuiGrid-grid-sm-6 {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .contact-cards .MuiCard-root {
+    max-width: 100% !important;
+    min-height: 280px !important;
+    margin: 0 16px !important;
+  }
+}
+
+@media (max-width: 599px) {
+  .MuiGrid-grid-sm-6 {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .MuiGrid-grid-md-3 {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .MuiGrid-grid-md-6 {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
 }
